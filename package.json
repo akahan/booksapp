@@ -1,0 +1,26 @@
+{
+  "name": "booksapp",
+  "version": "1.0.0",
+  "main": "01_sync_json.js",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-convert": "^1.2.0",
+    "koa-router": "^7.4.0",
+    "koa2-mysql-wrapper": "^2.0.1",
+    "lodash": "^4.17.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.4.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Yusufkhanov <r.yusufkhanov@gmail.com>",
+  "license": "MIT"
+}
