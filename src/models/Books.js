@@ -1,6 +1,6 @@
 import mysql from "../utils/mysql";
-import { appendIfValueDefined, createLimit, parseFilter, qa, qs } from "../utils";
 import _ from "lodash";
+import { appendIfValueDefined, createLimit, createWhereString, qa, qs } from "../utils/sql";
 
 const db = mysql();
 
@@ -19,7 +19,7 @@ export class BooksModel {
   static filtersFields = [];
 
   static async find(filter, orderBy, first, last, skip) {
-    const [wheres, variables] = parseFilter(filter, this.fields);
+    const [wheres, variables] = createWhereString(filter, this.fields);
     const limit = createLimit(first, last, skip);
 
     let query = `
@@ -28,7 +28,7 @@ export class BooksModel {
     `;
 
     if (wheres) {
-      query = appendIfValueDefined(query, "WHERE", wheres.join(" AND "));
+      query = appendIfValueDefined(query, "WHERE", wheres);
     }
 
     query = appendIfValueDefined(query, "LIMIT", limit);

@@ -6,8 +6,8 @@ export default class BooksController {
   static async list(ctx, next) {
     const { filter, orderBy, first, last, skip } = ctx.request.body || {};
 
-    console.log("ctx = ", filter, orderBy, first, last, skip);
-    console.log("ctx.request.body = ", ctx.request.body);
+    console.log("ctx = %j", { filter, orderBy, first, last, skip});
+    console.log("ctx.request.body = %j", ctx.request.body);
 
     const books = await BooksModel.find(filter, orderBy, first, last, skip);
 
