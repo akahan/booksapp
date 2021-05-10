@@ -8,7 +8,7 @@
     "koa-convert": "^1.2.0",
     "koa-router": "^7.4.0",
     "koa2-mysql-wrapper": "^2.0.1",
-    "lodash": "^4.17.14"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
